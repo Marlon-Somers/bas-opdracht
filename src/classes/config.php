@@ -2,7 +2,7 @@
 // auteur: studentnaam
 // functie: configuratiebestand
 
-define("DATABASE", "bas_2022");
+define("DATABASE", "bbb");
 define("SERVERNAME", "localhost");
 define("USERNAME", "root");
 define("PASSWORD", "");
