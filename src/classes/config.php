@@ -1,8 +1,8 @@
 <?php
-// auteur: studentnaam
+// auteur: marlon
 // functie: configuratiebestand
 
-define("DATABASE", "bbb");
+define("DATABASE", "bas");
 define("SERVERNAME", "localhost");
 define("USERNAME", "root");
 define("PASSWORD", "");

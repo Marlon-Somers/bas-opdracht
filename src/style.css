@@ -1,8 +1,65 @@
-table, th, td {
-    background-color: aquamarine;
-    border: 1px solid black;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #d7d3d4; /* lichtgrijs */
+    font-family: Arial, sans-serif;
 }
 
-th{
-    background-color: grey;    
+/* Header */
+header {
+    background-color: #c62828; /* dieprood */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+
+header img {
+    height: 60px;
+}
+
+header h1 {
+    color: white;
+    margin-left: 20px;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+main {
+    min-height: 60vh;
+    padding: 30px 20px 20px 20px;
+}
+
+nav {
+    margin: 20px 0 0 20px;
+}
+
+nav a {
+    color: #c62828;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #c62828;
+    height: 52px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+}
+footer p {
+    color: white;
+    text-align: center;
+    line-height: 52px;
+    margin: 0;
+    font-size: 1rem;
+}
+
