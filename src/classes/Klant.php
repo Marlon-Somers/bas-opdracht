@@ -111,19 +111,42 @@ public function getKlant(int $klantId) : array {
 
     // Delete klant
     /**
-     * Summary of deleteKlant
+     * Verwijder klant uit database
      * @param int $klantId
      * @return bool
      */
     public function deleteKlant(int $klantId) : bool {
-
-        return true;
-
+        try {
+            $sql = "DELETE FROM $this->table_name WHERE klantId = :klantId";
+            $stmt = self::$conn->prepare($sql);
+            return $stmt->execute(['klantId' => $klantId]);
+        } catch (\PDOException $e) {
+            echo "Fout bij verwijderen: " . $e->getMessage();
+            return false;
+        }
     }
 
-    public function updateKlant($row) : bool{
-
-        return true;
+    /**
+     * Update klantgegevens
+     * @param array $row
+     * @return bool
+     */
+    public function updateKlant($row) : bool {
+        try {
+            $sql = "UPDATE $this->table_name SET klantNaam = :klantNaam, klantEmail = :klantEmail, klantAdres = :klantAdres, klantPostcode = :klantPostcode, klantWoonplaats = :klantWoonplaats WHERE klantId = :klantId";
+            $stmt = self::$conn->prepare($sql);
+            return $stmt->execute([
+                'klantId' => $row['klantId'],
+                'klantNaam' => $row['klantNaam'],
+                'klantEmail' => $row['klantEmail'],
+                'klantAdres' => $row['klantAdres'],
+                'klantPostcode' => $row['klantPostcode'],
+                'klantWoonplaats' => $row['klantWoonplaats']
+            ]);
+        } catch (\PDOException $e) {
+            echo "Fout bij update: " . $e->getMessage();
+            return false;
+        }
     }
 
 
@@ -163,6 +186,23 @@ public function getKlant(int $klantId) : array {
         } catch (\PDOException $e) {
             echo "Fout bij insert: " . $e->getMessage();
             return false;
+        }
+    }
+
+    /**
+     * Zoek klanten op naam (LIKE)
+     * @param string $naam
+     * @return array
+     */
+    public function zoekOpNaam(string $naam): array {
+        try {
+            $sql = "SELECT klantId, klantNaam, klantEmail, klantAdres, klantPostcode, klantWoonplaats FROM $this->table_name WHERE klantNaam LIKE :naam";
+            $stmt = self::$conn->prepare($sql);
+            $stmt->execute(['naam' => "%$naam%"]);
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            echo "Fout bij zoeken: " . $e->getMessage();
+            return [];
         }
     }
 }

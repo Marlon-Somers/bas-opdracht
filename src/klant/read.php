@@ -18,7 +18,8 @@
     </header>
     <nav>
         <a href='../index.html'>Home</a><br>
-        <a href='insert.php'>Toevoegen nieuwe klant</a><br><br>
+        <a href='insert.php'>Toevoegen nieuwe klant</a><br>
+        <a href='search.php' class='square-btn'>Zoek klant</a><br><br>
     </nav>
     <main>
         <?php

@@ -31,21 +31,39 @@ main {
     padding: 30px 20px 20px 20px;
 }
 
-nav {
-    margin: 20px 0 0 20px;
+/* Grote knop container */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
 }
 
-nav a {
-    color: #c62828;
-    text-decoration: none;
+/* Grote knop stijl */
+.square-btn {
+    display: inline-block;
+    background: #c62828;
+    color: white !important;
     font-weight: bold;
-    margin-right: 15px;
-}
-nav a:hover {
-    text-decoration: underline;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 12px;
+    padding: 28px 40px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none !important;
+    transition: background 0.2s, transform 0.2s;
 }
 
-/* Footer */
+.square-btn:hover {
+    background: #a81d1d;
+    transform: translateY(-2px) scale(1.04);
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
 footer {
     background-color: #c62828;
     height: 52px;
@@ -55,6 +73,7 @@ footer {
     width: 100%;
     box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
 }
+
 footer p {
     color: white;
     text-align: center;
@@ -62,4 +81,3 @@ footer p {
     margin: 0;
     font-size: 1rem;
 }
-
