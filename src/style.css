@@ -1,13 +1,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #d7d3d4; /* lichtgrijs */
+    background-color: #d7d3d4; 
     font-family: Arial, sans-serif;
 }
 
-/* Header */
 header {
-    background-color: #c62828; /* dieprood */
+    background-color: #c62828; 
     height: 80px;
     display: flex;
     align-items: center;
@@ -31,7 +30,7 @@ main {
     padding: 30px 20px 20px 20px;
 }
 
-/* Grote knop container */
+
 .menu-container {
     display: flex;
     justify-content: center;
@@ -39,7 +38,6 @@ main {
     margin-top: 40px;
 }
 
-/* Grote knop stijl */
 .square-btn {
     display: inline-block;
     background: #c62828;
