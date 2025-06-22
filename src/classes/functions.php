@@ -9,7 +9,9 @@ function getTableHeader(array $row) : string {
     foreach($headers as $header){
         $headerTxt .= "<th>" . $header . "</th>";   
     }
-    $headerTxt .= "</tr>";
+    $headerTxt .= "<th>Acties</th></tr>";
     return $headerTxt;
 }
+
+
 ?>
